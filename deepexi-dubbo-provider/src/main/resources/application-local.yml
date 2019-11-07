@@ -1,0 +1,30 @@
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+  endpoint:
+    health:
+      show-details: always
+spring:
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: guest
+    password: guest
+  dubbo:
+    registry:
+      address: 'zookeeper://127.0.0.1:2181'
+  redis:
+    host: 127.0.0.1
+    port: '6379'
+  datasource:
+    driver-class-name: org.h2.Driver
+    username: root
+    password: root
+    url: 'jdbc:h2:mem:test'
+    schema: 'classpath:db/sql/demo_schema.sql'
+    data: 'classpath:db/sql/demo_data.sql'
+  h2:
+    console:
+      enabled: true
